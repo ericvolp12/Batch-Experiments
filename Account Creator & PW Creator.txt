@@ -1,0 +1,25 @@
+@echo off
+color c
+@echo Please enter your desired name below.
+@echo off
+SET /P name= 
+cls
+@echo Hello %name% welcome to the new program!
+@echo Today, I will help you create a  new account and change the password.
+@echo Remember, you must be running this program as Administrator.
+@echo Here we go!
+@echo off
+choice /T 7 /D y >nul
+cls
+@echo Enter the desired username below.
+SET /P user=
+@echo off
+net user %user% /ADD >nul
+cls
+@echo Enter the desired password below.
+net user %user% *
+cls
+@echo Thank's for using Account Creator by BaDOS!
+@echo Have a nice day!
+@echo off
+timeout /T 7 >nul

@@ -1,0 +1,18 @@
+@echo off
+color c
+@echo Please enter your desired name below.
+@echo off
+SET /P name= 
+cls
+@echo Hello %name% welcome to the new program!
+@echo Today, I will help you activate the admin account and change the password.
+@echo Remember, you must be running this program as Administrator.
+@echo Here we go!
+@echo off
+net user Administrator /active:yes >nul
+net user Administrator *
+cls
+@echo Now the Admin password has been changed to whatever you set!
+@echo Thanks and goodbye!
+@echo Brought to you by BaDOS
+timeout /T 7 /nobreak >nul

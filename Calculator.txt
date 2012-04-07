@@ -1,0 +1,111 @@
+@echo off
+color c
+@echo Please enter your desired name below.
+@echo off
+SET /P name= 
+cls
+@echo Hello %name% welcome to the new program!
+@echo Today, I will work with you as a 5 function calculator .
+@echo With this program, you can Add, Subtract, Multiply, Divide, and Square numbers.
+@echo Here we go!
+@echo off
+choice /T 10 /D y >nul
+:Choice
+cls
+@echo Enter the desired function below.(eg- add, subtract, multiply, divide, square)
+SET /P function=
+IF (%function%)==(add) GOTO Add
+IF (%function%)==(subtract) GOTO Sub
+IF (%function%)==(multiply) GOTO Mult
+IF (%function%)==(divide) GOTO Div
+IF (%function%)==(square) GOTO Squ
+
+:Error
+cls
+@echo The function you definied was not listed in the previous section!
+@echo Please wait and try again.
+@echo off
+choice /T 5 /D y>nul
+cls
+GOTO Choice
+
+:Squ
+@echo off
+cls
+@echo Please input the number you would like to square below!
+@echo off
+set /p squ=
+set /a squ2=%squ%*%squ%
+cls
+@echo %squ% squared is %squ2%!
+@echo off
+choice /T 7 /D y>nul
+GOTO End
+
+:Div
+@echo off
+cls
+@echo Please input the two numbers you would like to divide below!
+@echo off
+set /p div1=
+set /p div2=
+set /a quo=%div1%/%div2%
+cls
+@echo The difference of the two numbers is %quo%!
+@echo off
+choice /T 7 /D y>nul
+GOTO End
+
+:Mult
+@echo off
+cls
+@echo Please input the two numbers you would like to multiply below!
+@echo off
+set /p mult1=
+set /p mult2=
+set /a pro=%mult1%*%mult2%
+cls
+@echo The product of the two numbers is %pro%!
+@echo off
+choice /T 7 /D y>nul
+GOTO End
+
+:Sub
+@echo off
+cls
+@echo Please input the two numbers you would like to subtract below!
+@echo off
+set /p sub1=
+set /p sub2=
+set /a dif=%sub1%-%sub2%
+cls
+@echo The difference of the two numbers is %dif%!
+@echo off
+choice /T 7 /D y>nul
+GOTO End
+
+
+:Add
+@echo Please input the two numbers you would like to add below!
+@echo off
+set /p add1=
+set /p add2=
+set /a sum=%add1%+%add2%
+cls
+@echo The sum of the two numbers is %sum%!
+@echo off
+choice /T 7 /D y>nul
+GOTO End
+:End
+cls
+@echo Would you like to perform another function? (y/n)
+@echo off
+set /p end=
+IF (%end%)==(y) GOTO Choice
+IF (%end%)==(n) GOTO Exit
+:Exit
+cls
+@echo Thank's for using Calculator by BaDOS!
+@echo Have a nice day!
+@echo off
+timeout /T 7 >nul
